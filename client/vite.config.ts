@@ -23,11 +23,9 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
-  root: ".",
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true,
-  },
+    outDir: "../dist", // Go one level up to put final build in /dist
+    emptyOutDir: true,},
   server: {
     fs: {
       strict: true,
