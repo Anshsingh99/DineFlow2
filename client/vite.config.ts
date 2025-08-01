@@ -4,7 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  root:".",
+  root: path.resolve(__dirname),
   base: "./", // Ensures assets load properly
   plugins: [
     react(),
@@ -26,7 +26,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../dist", // Output goes one level up, into /dist
-    emptyOutDir: true,
+    outDir: "dist", // ✅ outputs to client/dist
+  emptyOutDir: true
   },
 });
