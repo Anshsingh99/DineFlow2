@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Indian Restaurant Theme Colors */
+  --restaurant-primary: hsl(14, 91%, 54%); /* Warm saffron */
+  --restaurant-secondary: hsl(39, 60%, 35%); /* Darker golden turmeric */
+  --restaurant-accent: hsl(120, 61%, 34%); /* Fresh mint green */
+  --restaurant-neutral: hsl(45, 40%, 75%); /* Darker cream */
+  --restaurant-dark: hsl(0, 43%, 16%); /* Deep maroon */
+  --restaurant-light: hsl(45, 100%, 96%); /* Off white */
+  --restaurant-text-primary: hsl(0, 0%, 15%); /* Very dark gray for main text */
+  --restaurant-text-secondary: hsl(0, 0%, 25%); /* Dark gray for secondary text */
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: var(--background);
+    color: var(--foreground);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Restaurant Theme Animations */
+@keyframes plateRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes steamRise {
+  0% { 
+    transform: translateY(0px) scale(1); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: translateY(-20px) scale(1.1); 
+    opacity: 0.5; 
+  }
+  100% { 
+    transform: translateY(-40px) scale(1.2); 
+    opacity: 0; 
+  }
+}
+
+@keyframes loadingDots {
+  0%, 20% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: scale(1.2); 
+    opacity: 0.7; 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(30px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+.plate-loader {
+  animation: plateRotate 3s linear infinite;
+}
+
+.steam-animation {
+  animation: steamRise 2s ease-in-out infinite;
+}
+
+.steam-animation:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.steam-animation:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.loading-dot {
+  animation: loadingDots 1.5s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 1;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Restaurant Theme Utilities */
+.bg-restaurant-primary { background-color: var(--restaurant-primary); }
+.bg-restaurant-secondary { background-color: var(--restaurant-secondary); }
+.bg-restaurant-accent { background-color: var(--restaurant-accent); }
+.bg-restaurant-neutral { background-color: var(--restaurant-neutral); }
+.bg-restaurant-dark { background-color: var(--restaurant-dark); }
+.bg-restaurant-light { background-color: var(--restaurant-light); }
+
+.text-restaurant-primary { color: var(--restaurant-primary); }
+.text-restaurant-secondary { color: var(--restaurant-secondary); }
+.text-restaurant-accent { color: var(--restaurant-accent); }
+.text-restaurant-neutral { color: var(--restaurant-neutral); }
+.text-restaurant-dark { color: var(--restaurant-dark); }
+.text-restaurant-light { color: var(--restaurant-light); }
+.text-restaurant-text-primary { color: var(--restaurant-text-primary); }
+.text-restaurant-text-secondary { color: var(--restaurant-text-secondary); }
+
+.border-restaurant-primary { border-color: var(--restaurant-primary); }
+.border-restaurant-secondary { border-color: var(--restaurant-secondary); }
+.border-restaurant-accent { border-color: var(--restaurant-accent); }
+.border-restaurant-neutral { border-color: var(--restaurant-neutral); }
+.border-restaurant-dark { border-color: var(--restaurant-dark); }
+.border-restaurant-light { border-color: var(--restaurant-light); }
+
+/* Hover states for restaurant colors */
+.hover\:bg-restaurant-primary:hover { background-color: var(--restaurant-primary); }
+.hover\:bg-restaurant-secondary:hover { background-color: var(--restaurant-secondary); }
+.hover\:bg-restaurant-accent:hover { background-color: var(--restaurant-accent); }
+.hover\:text-restaurant-accent:hover { color: var(--restaurant-accent); }
+.hover\:text-restaurant-light:hover { color: var(--restaurant-light); }
+.hover\:border-restaurant-accent:hover { border-color: var(--restaurant-accent); }
+
+/* Focus states */
+.focus\:border-restaurant-accent:focus { border-color: var(--restaurant-accent); }
+
+/* Gradient backgrounds */
+.bg-indian-sunset {
+  background: linear-gradient(135deg, var(--restaurant-primary) 0%, var(--restaurant-secondary) 50%, var(--restaurant-accent) 100%);
+}
+
+.bg-spice-gradient {
+  background: linear-gradient(45deg, var(--restaurant-dark) 0%, var(--restaurant-primary) 30%, var(--restaurant-secondary) 70%, var(--restaurant-light) 100%);
+}
+
+.bg-warm-spice {
+  background: linear-gradient(to bottom right, var(--restaurant-primary), var(--restaurant-dark));
+}
+
+/* Custom cursors */
+.cursor-namaste {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="24" font-size="20">🙏</text></svg>'), auto;
+}
+
+.cursor-spice {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="24" font-size="20">🌶️</text></svg>'), auto;
+}
+
+/* Smooth transitions */
+.transition-all-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-transform-smooth {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Floating animation for elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+/* Hover glow effect */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(244, 114, 64, 0.4);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
+  }
+}
