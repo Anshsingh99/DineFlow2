@@ -25,7 +25,7 @@ const ContactSection = () => {
                 </svg>
                 <div>
                   <h4 className="font-semibold">Address</h4>
-                  <p className="text-restaurant-text-secondary">123 Spice Bazaar Lane<br/>Little India, Mumbai 400001</p>
+                  <p className="text-restaurant">shreays cinema road , Lbs marg ,Andheri<br/>Little India, Mumbai 400001</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -34,7 +34,7 @@ const ContactSection = () => {
                 </svg>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-restaurant-text-secondary">+91 98765 43210</p>
+                  <p className="text-restaurant">+91 98765 43210</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -43,7 +43,7 @@ const ContactSection = () => {
                 </svg>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <p className="text-restaurant-text-secondary">namaste@auntyskitchen.in</p>
+                  <p className="text-restaurant">anshsingh@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -53,7 +53,7 @@ const ContactSection = () => {
                 </svg>
                 <div>
                   <h4 className="font-semibold">Hours</h4>
-                  <p className="text-restaurant-text-secondary">
+                  <p className="text-restaurant">
                     Mon-Thu: 5:00 PM - 10:00 PM<br/>
                     Fri-Sat: 5:00 PM - 11:00 PM<br/>
                     Sun: 4:00 PM - 9:00 PM
