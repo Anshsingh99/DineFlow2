@@ -101,8 +101,6 @@ const MenuSection = () => {
     👀 Hover to preview
   </span>
 </div>
-
-                {/* Dot indicators */}
                 <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
                   {item.images.map((_, idx) => (
                     <span
